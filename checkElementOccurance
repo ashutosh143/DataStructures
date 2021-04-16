@@ -1,0 +1,66 @@
+
+/**
+ * 
+ * @author TechieExpress
+ * 
+ * 
+ * Given an array arr[] and size of array is n and one another key x, and give you a segment size k. 
+ * The task is to find that the key x present in every segment of size k in arr[].
+ *
+ */
+
+public class checkElementOccurance {
+	
+	public static boolean checkelemOccHelper(int[] arr, int len, int x, int k) {
+		
+		
+		boolean flag=false;
+		
+		int j=0;
+		
+		for(int i=0; i<len;i=i+k) {
+			
+			
+			for( j=i;j<i+k;j++) {
+				
+				if(j<len && arr[j]==x) {
+					
+					break;
+				}
+				
+				if(j==i+k || j>len) {
+					
+					return false;
+				}
+				
+				
+			}
+	}
+		
+		if(j<len) {
+			
+			return true;
+		}
+		return flag;
+		
+		
+	}
+	
+	
+	public static void main(String args[]) {
+		
+		
+		int arr[]= new int[]{1,2,3,5,0,4,0,7,9,8};
+		
+		int l=arr.length;
+		
+		int x=3;
+		int k=2;
+		
+		System.out.println(checkelemOccHelper(arr,l,x,k));
+		
+		
+		
+	}
+
+}
