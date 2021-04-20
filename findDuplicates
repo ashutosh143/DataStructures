@@ -1,0 +1,36 @@
+
+/**
+*
+* @author techieExpress
+*
+*You are given a list of n-1 integers and these integers are in the range of 1 to n.
+* There are no duplicates in the list. 
+* One of the integers is missing in the list. 
+* Write an efficient code to find the missing integer. 
+*
+**/
+
+public class findDuplicates {
+	
+	
+	public static void main(String args[])
+    {
+        int arr[] = { 2,1,1,2 };
+  
+        for (int i = 0; i < arr.length; i++) {
+        	arr[arr[i] % arr.length]
+                = arr[arr[i] % arr.length]
+                  + arr.length;
+        }
+        System.out.println("The repeating elements are : ");
+        for (int i = 0; i < arr.length; i++) {
+        	
+        	//System.out.print(numRay[i]);
+            if (arr[i] >= arr.length * 2) {
+                System.out.println(i + " ");
+                arr[i]=arr[i]%arr.length;
+            }
+        }
+    }
+
+}
