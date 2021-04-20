@@ -1,0 +1,86 @@
+
+
+/**
+ *
+ * @author techieExpress
+ *
+ *
+ *
+ **/
+
+public class reverseAnArray {
+
+	public static void reverseRecHelper(int[] arr, int start, int end) {
+	
+		if (start < end) {
+
+			// swap elements
+			int temp = arr[start];
+			arr[start] = arr[end];
+			arr[end] = temp;
+
+			// call back the function recursively for the new start and end values
+			reverseRecHelper(arr, start+1, end-1);
+
+		}
+
+	}
+
+	// function to reverse an array in a recursive manner
+	public static void reverseRecursive(int[] arr) {
+
+		reverseRecHelper(arr, 0, arr.length - 1);
+	}
+
+	// function to reverse an array in an iterative manner
+	public static void reverseIterative(int[] arr) {
+
+		int start = 0; // start from 0th position
+		int end = arr.length - 1; // end is at the last position
+		int temp;
+
+		while (start < end) {
+			// swap the values
+			temp = arr[start];
+			arr[start] = arr[end];
+			arr[end] = temp;
+
+			// increment start and decrement end
+			start++;
+			end--;
+
+		}
+
+	}
+
+	// function to print the contents of an array
+	public static void printArray(int[] arr) {
+		System.out.print(" Array contents are: [ ");
+		for (int i = 0; i < arr.length - 1; i++) {
+			System.out.print(arr[i] + ", ");
+		}
+		System.out.print(arr[arr.length - 1] + " ]");
+		System.out.println();
+	}
+
+	// main function which call the reverse functions
+	public static void main(String[] args) {
+		int[] arr = { 1, 2, 3, 4, 5 };
+
+		System.out.println("Orignal array is: ");
+		System.out.println();
+		printArray(arr);
+
+		System.out.println(" Calling array reverse using iterative approach, output is: ");
+		System.out.println();
+		reverseIterative(arr);
+		printArray(arr);
+
+		System.out.println(" Calling array reverse using recursive approach, output is: ");
+		System.out.println();
+		reverseRecursive(arr);
+		printArray(arr);
+
+	}
+
+}
