@@ -3,11 +3,11 @@
 *
 * @author techieExpress
 *
-*You are given a list of n-1 integers and these integers are in the range of 1 to n.
-* There are no duplicates in the list. 
-* One of the integers is missing in the list. 
-* Write an efficient code to find the missing integer. 
-*
+* You are given a list of n-1 integers and these integers are in the range * of 1 to n.
+* Input: Given an array of n elements which contains elements 
+* from 0 to n-1, with any of these numbers appearing any number of times.
+* 
+* Goal: To find these repeating numbers in O(n) and using only constant memory space.
 **/
 
 public class findDuplicates {
