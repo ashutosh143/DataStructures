@@ -10,7 +10,9 @@
 * Again buy on day 4 and sell on day 6. 
 * If the given array of prices is sorted in decreasing order, 
 * then profit cannot be earned at all.
+* 
 *
+* YouTube video explanation link - https://youtu.be/IYENA3WpwsA
 **/
 
 import java.util.ArrayList;
