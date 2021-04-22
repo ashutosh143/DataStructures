@@ -1,0 +1,54 @@
+
+/**
+*
+* @author techieExpress
+*
+*  Bubble Sort
+**/
+public class bubbleSort {
+
+	public static void bubbleSortImpl(int[] arr) {
+
+		int temp, flag = 1;
+
+		for (int i = 0; i < arr.length && flag == 1; i++) {
+
+			flag = 0;
+
+			for (int j = 0; j < arr.length - 1 - i; j++) {
+
+				if (arr[j] > arr[j + 1]) {
+
+					temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+
+					flag = 1;
+				}
+			}
+		}
+
+	}
+
+	public static void printArray(int[] arr) {
+
+		System.out.println();
+		for (int i = 0; i < arr.length; i++) {
+
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println();
+
+	}
+
+	public static void main(String[] args) {
+
+		int[] arr = { 5, 4, 2, 1, 3 };
+
+		printArray(arr);
+		bubbleSortImpl(arr);
+		printArray(arr);
+
+	}
+
+}
