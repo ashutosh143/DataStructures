@@ -1,0 +1,58 @@
+/**
+*
+* @author techieExpress
+*
+*Delete a node from the linked list without a head pointer.
+*      
+**/
+public class delLinkedList {
+
+	static Node head;
+
+	static class Node {
+
+		int data;
+		Node next;
+
+		Node(int d) {
+			data = d;
+			next = null;
+		}
+	}
+
+	void printList(Node node) {
+		while (node != null) {
+			System.out.print(node.data + " ");
+			node = node.next;
+		}
+	}
+
+	void deleteNode(Node node) {
+		
+		
+		node.data=node.next.data;
+		node.next=node.next.next;
+		
+	}
+
+	// Driver code
+	@SuppressWarnings("static-access")
+	public static void main(String[] args) {
+		delLinkedList list = new delLinkedList();
+		list.head = new Node(2);
+		list.head.next = new Node(4);
+		list.head.next.next = new Node(6);
+		list.head.next.next.next = new Node(8);
+		list.head.next.next.next.next = new Node(10);
+		
+
+		System.out.println("Before Deleting ");
+		list.printList(head);
+
+		list.deleteNode(head.next.next);
+		System.out.println("");
+		System.out.println("After deleting ");
+		list.printList(head);
+	}
+
+}
