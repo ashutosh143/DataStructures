@@ -1,0 +1,101 @@
+
+
+/**
+ *
+ * @author techieExpress
+ *
+ *         Delete Kth node from the end of the linked list.
+ *
+ *        Video - https://youtu.be/4DMgbpOapIM
+ * 
+ **/
+
+public class deleteKthNodeFromEnd {
+	// Head of list
+	Node head;
+
+	// Linked list Node
+	class Node {
+		int data;
+		Node next;
+
+		Node(int d) {
+			data = d;
+			next = null;
+		}
+	}
+
+	// Function to delete the nth node from
+	// the end of the given linked list
+	void deleteNode(int k) {
+		
+		Node first,second;
+		
+		first=head;
+		
+		for(int i=0;i<k;i++) {
+			
+			if(first.next==null) {
+				
+				
+				if(i==k-1) {
+					head=head.next;
+					
+				}
+				
+				return;
+			}
+			
+			first=first.next;
+			
+		}
+		second=head;
+		while(first.next!=null) {
+			
+			first=first.next;
+			second=second.next;
+			
+		}
+		
+		second.next=second.next.next;
+		
+		
+
+	
+	}
+
+	// Function to insert a new Node at front of the list
+	public void push(int new_data) {
+		Node new_node = new Node(new_data);
+		new_node.next = head;
+		head = new_node;
+	}
+
+	// Function to print the linked list
+	public void printList() {
+		Node tnode = head;
+		while (tnode != null) {
+			System.out.print(tnode.data + " ");
+			tnode = tnode.next;
+		}
+	}
+
+	// Driver code
+	public static void main(String[] args) {
+		deleteKthNodeFromEnd llist = new deleteKthNodeFromEnd();
+
+		llist.push(7);
+		llist.push(1);
+		llist.push(3);
+		llist.push(2);
+
+		System.out.println("\nCreated Linked list is:");
+		llist.printList();
+
+		int K = 7;
+		llist.deleteNode(K);
+
+		System.out.println("\nLinked List after Deletion at poition "+K+" from end is:");
+		llist.printList();
+	}
+}
