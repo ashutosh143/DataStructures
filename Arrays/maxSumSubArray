@@ -1,0 +1,54 @@
+package arrays;
+
+/**
+ * 
+ * @author TechieExpress
+ * 
+ * 
+ * An efficient program to find the sum of contiguous subarray within a one-dimensional array of numbers
+ * that has the largest sum using Kadane’s Algorithm.
+ * 
+ * Video explanation - https://youtu.be/0Q45ME-5ii0
+ * 
+ * 
+ */
+
+public class maxSumSubArray {
+
+	static void maxSubArraySum(int arr[], int size) {
+
+		int gm, meh;
+
+		gm = Integer.MIN_VALUE;
+		meh = 0;
+
+		for (int i = 0; i < size; i++) {
+
+			meh = meh + arr[i];
+
+			if (arr[i] > meh) {
+
+				meh = arr[i];
+			}
+
+			if (meh > gm) {
+
+				gm = meh;
+			}
+
+		}
+
+		System.out.println("Max possible sum is " + gm);
+
+	}
+
+	
+
+	// Driver code
+	public static void main(String[] args) {
+		int a[] = { -2, 1, 3, 4, -1, 2, 1, -5, 4 };
+		int n = a.length;
+		maxSubArraySum(a, n);
+
+	}
+}
