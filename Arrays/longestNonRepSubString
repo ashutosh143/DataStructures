@@ -1,0 +1,57 @@
+import java.util.HashMap;
+
+/**
+ *
+ * @author techieExpress
+ *
+ *         Length of the longest substring without repeating characters
+ *.        Video for explanation - https://youtu.be/jZXo3XhueXw
+ *
+ **/
+
+public class longestNonRepSubString {
+	public static int longestSubStringWithoutRep(String s) {
+		
+		int gm=0,lm,i,start=0;
+		HashMap<Character,Integer> hp= new HashMap<Character,Integer>();
+		
+		
+		for(i=0;i<s.length();i++) {
+			
+			if(hp.containsKey(s.charAt(i))) {
+				if(hp.get(s.charAt(i))>=start) {
+					
+					lm=i-start;
+					if(gm<lm) {
+						gm=lm;
+					}
+					start=hp.get(s.charAt(i))+1;
+				}
+				
+				hp.replace(s.charAt(i), i);
+				
+				
+			}else {
+				hp.put(s.charAt(i), i);
+			}
+			
+		}
+		
+		lm=i-start;
+		if(gm<lm) {
+			gm=lm;
+		}
+		
+		return gm;
+		
+
+	}
+
+	public static void main(String[] args) {
+
+		String str = "ababkkaba";
+		System.out.print("ANSWER " + longestSubStringWithoutRep(str));
+
+	}
+
+}
