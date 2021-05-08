@@ -5,6 +5,7 @@
  *  Given an array with positive integers as elements indicating the maximum length of a jump which can be made from any position in the array.
  *  Check if it is possible to have a jumps combination so that you can eventually reach the end of the given array.
  *  Print "true" if it is possible, otherwise, print "false".
+ *  Video for explanation - https://youtu.be/zzh4nPnh8KM
  */
 
 
