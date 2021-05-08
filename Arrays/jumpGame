@@ -1,0 +1,54 @@
+/**
+ * 
+ * @author techieExpress
+ * 
+ *  Given an array with positive integers as elements indicating the maximum length of a jump which can be made from any position in the array.
+ *  Check if it is possible to have a jumps combination so that you can eventually reach the end of the given array.
+ *  Print "true" if it is possible, otherwise, print "false".
+ */
+
+
+public class jumpGame {
+	
+	
+	public static void isEndReached(int[] arr) {
+		
+		int maxIndex=0;
+		int currIndex;
+		
+		for(int i=0;i<arr.length;i++) {
+			
+			
+			if(maxIndex==arr.length-1) {
+				System.out.println("True");
+				return;
+			}
+			
+			if(i>maxIndex) {
+				System.out.println("False");
+				return;
+			}
+			
+			
+			currIndex=i+arr[i];
+			
+			if(maxIndex<currIndex) {
+				maxIndex=currIndex;
+			}
+			
+			
+		}
+		
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		int arr[]= {2,1,0,3,4,1};
+		
+		isEndReached(arr);
+		
+	}
+
+}
