@@ -28,7 +28,7 @@ public class checkElementOccurance {
 					break;
 				}
 				
-				if(j==i+k || j>len) {
+				if(j==i+k-1 || j>len) {
 					
 					return false;
 				}
