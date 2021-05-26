@@ -12,6 +12,10 @@
 public class checkElementOccurance {
 	
 	public static boolean checkelemOccHelper(int[] arr, int len, int x, int k) {
+	
+		if(k==0){
+		    return false;
+		}
 		
 		
 		boolean flag=false;
