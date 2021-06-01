@@ -1,0 +1,84 @@
+/**
+ *  @author officialTechieExpress
+ *  
+ *  Given an m x n matrix. If an element is 0, 
+ *  set its entire row and column to 0.
+ *  
+ *  Do it in-place
+ * 
+ */
+
+
+
+public class setMatrixValues {
+
+	public static void printMatrix(int[][] arr) {
+
+		for (int i = 0; i < arr.length; i++) {
+
+			for (int j = 0; j < arr[0].length; j++) {
+				System.out.print(arr[i][j] + "   ");
+
+			}
+			System.out.println();
+		}
+	}
+
+	public static void setMatrixToZeros(int[][] arr) {
+
+		int rowFlag = 1, colFlag = 1;
+
+		for (int i = 0; i < arr.length; i++) {
+
+			for (int j = 0; j < arr[0].length; j++) {
+
+				if (i == 0 && arr[i][j] == 0)
+					rowFlag = 0;
+
+				if (j == 0 && arr[i][j] == 0)
+					colFlag = 0;
+
+				if (arr[i][j] == 0) {
+
+					arr[i][0] = 0;
+					arr[0][j] = 0;
+				}
+
+			}
+		}
+
+		for (int i = 1; i < arr.length; i++) {
+
+			for (int j = 1; j < arr[0].length; j++) {
+				
+				if(arr[i][0]==0|| arr[0][j]==0)
+					arr[i][j]=0;
+			}
+		}
+		
+		if(rowFlag==0) {
+			for(int i=0;i<arr[0].length;i++) {
+				arr[0][i]=0;
+			}
+			
+		}
+		
+		if(colFlag==0) {
+			for(int i=0;i<arr.length;i++) {
+				arr[i][0]=0;
+			}
+			
+		}
+
+	}
+
+	public static void main(String[] args) {
+		int[][] arr = { { 1, 1, 0, 1 }, { 1, 1, 1, 1 }, { 0, 1, 0, 1 } };
+		System.out.println("------------ Before -----------------");
+		printMatrix(arr);
+		setMatrixToZeros(arr);
+		System.out.println("------------ After -----------------");
+		printMatrix(arr);
+	}
+
+}
